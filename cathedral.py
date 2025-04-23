@@ -30,7 +30,7 @@ async def on_ready():
 @tasks.loop(seconds=1)
 async def play_melody():
     current_time = datetime.now(moscow_tz)
-    if current_time.minute == 47 and current_time.second == 0:
+    if current_time.minute == 0 and current_time.second == 0:
         channel = bot.get_channel(CHANNEL_ID)
         if channel and channel.members:
             voice_client = discord.utils.get(bot.voice_clients, guild=channel.guild)
